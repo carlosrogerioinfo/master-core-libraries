@@ -28,7 +28,7 @@ namespace Master.Core.WebApi.Extensions
             return string.IsNullOrEmpty(contentResponse) ? default : JsonSerializer.Deserialize<T>(contentResponse, JsonSerializerSettings.Config);
         }
 
-        public static Task<HttpResponseMessage> GetJsonAsync(this HttpClient client, string url, object data)
+        public static Task<HttpResponseMessage> GetJsonAsync(this HttpClient client, string url)
         {
             if (client == null)
             {
