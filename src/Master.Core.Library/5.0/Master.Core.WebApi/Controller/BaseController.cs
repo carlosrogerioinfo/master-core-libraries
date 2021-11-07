@@ -1,5 +1,7 @@
-﻿using Master.Core.WebApi.Response;
+﻿using FluentValidator;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Master.Core.WebApi.Controller
@@ -9,9 +11,9 @@ namespace Master.Core.WebApi.Controller
     {
         protected BaseController() { }
 
-        protected new async Task<IActionResult> Response(object result, ResponseResult notifications = null)
+        protected new async Task<IActionResult> Response(object result, IEnumerable<Notification> notifications)
         {
-            if (notifications == default)
+            if (!notifications.Any())
             {
                 try
                 {
@@ -33,10 +35,11 @@ namespace Master.Core.WebApi.Controller
             }
             else
             {
+                var message = notifications.FirstOrDefault();
                 return BadRequest(new
                 {
                     success = false,
-                    errors = notifications.Errors
+                    error = new { code = message.Property, description = message.Message }
                 });
             }
         }
