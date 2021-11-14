@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>WebAPI.Sample</AssemblyName>
+    <RootNamespace>WebAPI.Sample</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
