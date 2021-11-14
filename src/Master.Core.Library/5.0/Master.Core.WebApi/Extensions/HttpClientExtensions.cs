@@ -32,7 +32,7 @@ namespace Master.Core.WebApi.Extensions
             }
             catch (Exception e)
             {
-                var error = CreateContent(new ResponseError { Title = "", Status = 1, Errors = new List<Error>() { new Error { Property = "prop", Message = e.Message } } } );
+                var error = CreateContent(new ResponseError { Status = -1, Message = e.Message, Errors = new List<Error>() { new Error { Property = "prop", Message = e.Message } } } );
                 return JsonSerializer.Deserialize<T>(await error.ReadAsStringAsync(), JsonSerializerSettings.Config);
             }
         }

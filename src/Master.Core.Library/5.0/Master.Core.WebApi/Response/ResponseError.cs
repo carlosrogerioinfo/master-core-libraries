@@ -4,8 +4,10 @@ namespace Master.Core.WebApi.Response
 {
     public class ResponseError
     {
-        public string Title { get; set; }
+        public int Code { get; set; }
+        public string Description { get; set; }
         public int Status { get; set; }
+        public string Message { get; set; }
         public ICollection<Error> Errors { get; set; }
     }
 

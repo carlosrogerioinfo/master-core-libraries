@@ -8,7 +8,7 @@
     <Description>Library containing main resource for comunicating with anothers web api. Simple and high performance. This package is only to test publish on nuget.org</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageId>Test.Master.Core.WebApi</PackageId>
-    <Version>1.0.2</Version>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

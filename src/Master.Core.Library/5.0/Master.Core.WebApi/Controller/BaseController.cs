@@ -39,7 +39,7 @@ namespace Master.Core.WebApi.Controller
                 return BadRequest(new
                 {
                     success = false,
-                    error = new { code = message.Property, description = message.Message }
+                    error = new { code = message.Property, message = message.Message }
                 });
             }
         }
