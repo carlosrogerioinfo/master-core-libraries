@@ -21,9 +21,9 @@ namespace WebAPI.Test.Controllers
         [HttpGet]
         [Route("artists")]
         [ProducesResponseType(typeof(IEnumerable<Artist>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetAllArtists(string ids)
+        public async Task<IActionResult> GetAllArtists(string ids, string authorizationToken)
         {
-            return await Response(await _service.GetArtistAsync(ids), _service.Notifications);
+            return await Response(await _service.GetArtistAsync(ids, authorizationToken), _service.Notifications);
         }
 
     }

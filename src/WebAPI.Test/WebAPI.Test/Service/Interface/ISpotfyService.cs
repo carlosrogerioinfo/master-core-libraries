@@ -6,6 +6,6 @@ namespace WebAPI.Test.Service.Interface
 {
     public interface ISpotfyService
     {
-        Task<IEnumerable<Artist>> GetArtistAsync(string ids);
+        Task<IEnumerable<Artist>> GetArtistAsync(string ids, string authorizationToken);
     }
 }

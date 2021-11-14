@@ -17,9 +17,9 @@ namespace WebAPI.Test.Service
             _httpClient = httpClient;
         }
 
-        public async Task<IEnumerable<Artist>> GetArtistAsync(string ids)
+        public async Task<IEnumerable<Artist>> GetArtistAsync(string ids, string authorizationToken)
         {
-            _httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer BQDEdAa3AP5-fVl7PUZ0oHrAyiitKmEkuTzKJ04RJoFK-LOeLKnFIs_04xtEssAYAc4psEDKQkvcrpIIuy1UateH7H6RC0d_vUSFn4e5DFFP_wxCWXiS0YVByG3LtgsYN1Z4mIqdQwO1_OIg4qROow25cdPfynxEz7EEwek");
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {authorizationToken}");
 
             var response = await _httpClient
                 .GetJsonAsync($"/artists?ids={ids}");
