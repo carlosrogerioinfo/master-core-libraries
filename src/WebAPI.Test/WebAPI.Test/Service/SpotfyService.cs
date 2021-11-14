@@ -29,5 +29,18 @@ namespace WebAPI.Test.Service
 
             return await response.Content.ReadJsonAsync<IEnumerable<Artist>>("artists");
         }
+
+        public async Task<IEnumerable<Album>> GetAlbumAsync(string ids, string authorizationToken, string market)
+        {
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {authorizationToken}");
+
+            var response = await _httpClient
+                .GetJsonAsync($"/albums?ids={ids}&market={market}");
+
+            if (!ResponseErrorHandling(response))
+                return null;
+
+            return await response.Content.ReadJsonAsync<IEnumerable<Album>>("albums");
+        }
     }
 }

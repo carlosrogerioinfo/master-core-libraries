@@ -26,5 +26,12 @@ namespace WebAPI.Test.Controllers
             return await Response(await _service.GetArtistAsync(ids, authorizationToken), _service.Notifications);
         }
 
+        [HttpGet]
+        [Route("album")]
+        [ProducesResponseType(typeof(IEnumerable<Album>), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetAllAlbums(string ids, string authorizationToken, string market = "ES")
+        {
+            return await Response(await _service.GetAlbumAsync(ids, authorizationToken, market), _service.Notifications);
+        }
     }
 }
