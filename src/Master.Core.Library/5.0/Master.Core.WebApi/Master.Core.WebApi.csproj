@@ -5,10 +5,10 @@
     <Authors>Carlos Rogerio</Authors>
     <Company>Esterdigi</Company>
     <Product>Master Core Library For APIs</Product>
-    <Description>Library containing main resource for comunicating with anothers web api. Simple and high performance. This package is only to test publish on nuget.org</Description>
+    <Description>Library containing main resource for comunicating with anothers web api. Simple and high performance.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageId>Test.Master.Core.WebApi</PackageId>
-    <Version>1.0.2</Version>
+    <PackageId>Master.Core.WebApi</PackageId>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
